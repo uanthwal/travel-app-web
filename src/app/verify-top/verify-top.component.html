@@ -1,0 +1,14 @@
+<div class="verify-otp-container">
+    <div class="otp-container">
+        <form [formGroup]="otpForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="otp">OTP</label>
+                <input type="text" formControlName="otp" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.otp.errors }" />
+                <div *ngIf="submitted && f.otp.errors" class="invalid-feedback">
+                    <div *ngIf="f.otp.errors.required">OTP is required</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

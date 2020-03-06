@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'travel-app-web'`, () => {
+  it(`should have as title 'dalcloud5409'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('travel-app-web');
+    expect(app.title).toEqual('dalcloud5409');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('travel-app-web app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('dalcloud5409 app is running!');
   });
 });
