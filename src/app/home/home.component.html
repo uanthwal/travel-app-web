@@ -4,12 +4,33 @@
     </div>
     <div class="search-block">
         <input [(ngModel)]="search_text" required>
-        
     </div>
     <div class="search-btn-block">
         <button (click)="onClickSearch()">Search</button>
     </div>
     <div class="search-results">
 
+    </div>
+    <div class="grid-row ">
+
+        <div class="grid-item" *ngFor="let card of searchResults">
+            <div class="img-blck">
+                <img src="{{card.img_url}}" />
+            </div>
+            <div class="cntnt-blck">
+                <span class="place-name">
+                    {{card.place_name}}
+                   </span> 
+                   <span class="place-desc">
+                    {{card.desc}}
+                   </span> 
+                   <span class="place-province">
+                    {{card.province_id}}
+                   </span> 
+                   <span class="place-book">
+                    <button>BOOK</button>
+                   </span> 
+            </div>
+        </div>
     </div>
 </div>
