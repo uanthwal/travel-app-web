@@ -1,7 +1,13 @@
 <div class="home-container">
+    <div class="top-bar">
+        <h2>Welcome</h2>
+    </div>
     <div class="search-block">
         <input [(ngModel)]="search_text" required>
-        <i class="fa fa-search" (click)="onClickSearch()"></i>
+        
+    </div>
+    <div class="search-btn-block">
+        <button (click)="onClickSearch()">Search</button>
     </div>
     <div class="search-results">
 

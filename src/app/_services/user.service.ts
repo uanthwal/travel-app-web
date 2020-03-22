@@ -11,8 +11,8 @@ export class UserService {
         return this.http.post<any>(URL_CONFIG.BASE_URL  + URL_CONFIG.REGISTER_URL, user);
     }
 
-    login(user: User) {
-        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.LOGIN_URL, user);
+    search(data) {
+        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.SEARCH_URL, data);
     }
 
     

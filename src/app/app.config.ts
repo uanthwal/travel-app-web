@@ -8,7 +8,8 @@ export var URL_CONFIG = {
     BASE_URL: getConfigs()["BASE_URL"],
     LOGIN_URL: "/login",
     REGISTER_URL: "/register",
-    VERIFY_OTP : "/verify-otp"
+    VERIFY_OTP : "/verify-otp",
+    SEARCH_URL:"/search"
 };
 
 export function getConfigs() {

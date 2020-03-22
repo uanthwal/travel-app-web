@@ -1,0 +1,26 @@
+.search-block {
+  text-align: center;
+  margin-top: 10%;
+  input {
+    padding: 10px 15px;
+    height: 58px;
+    font-size: 35px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    width: 40%;
+  }
+}
+
+.search-btn-block {
+  text-align: center;
+  margin-top: 10px;
+  button {
+    padding: 5px 20px;
+    &:hover {
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+    }
+  }
+}
