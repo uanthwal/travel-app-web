@@ -1,0 +1,18 @@
+.blcks {
+  display: flex;
+  height: 100%;
+  .reg-form {
+    width: 20%;
+    float: right;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 10%;
+  }
+  .lft-blck {
+    flex: 1;
+    background-image: url(../../assets/register_form.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
