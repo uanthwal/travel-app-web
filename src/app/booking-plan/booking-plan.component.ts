@@ -46,6 +46,7 @@ export class BookingPlanComponent implements OnInit {
         data => {
           if (data["code"] == 200) {
             this.sourceList = data["data"];
+            this.source = data['data'][0]['p_id']
           }
         },
         error => {}
@@ -77,20 +78,32 @@ export class BookingPlanComponent implements OnInit {
   }
 
   onClickBook(option) {
+    this.router.navigate(["/booking-payment"], {
+      queryParams: { b_id: "FGHJ5678GHJBGH" }
+    });
+    return;
     let payload = {
-      src:this.source,
+      src: this.source,
       dest: this.destination,
-      mode:option.mode
+      mode: option.mode,
+      mode_company: option.mode_company,
+      mode_fare: option.mode_fare,
+      mode_number: option.mode_number,
+      mode_id: option.mode_id,
+      data_of_travel: this.dateSelected
     };
-
-    this.userService.bookTicket(payload).pipe(first())
-    .subscribe(
-      data => {
-        if (data["code"] == 200) {
-          this.router.navigate(['/booking-confirmation']);
-        }
-      },
-      error => {}
-    );
+    this.userService
+      .bookTicket(payload)
+      .pipe(first())
+      .subscribe(
+        data => {
+          if (data["code"] == 200) {
+            this.router.navigate(["/booking-payment"], {
+              queryParams: { b_id: data["booking_id"] }
+            });
+          }
+        },
+        error => {}
+      );
   }
 }

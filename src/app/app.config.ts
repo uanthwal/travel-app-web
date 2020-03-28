@@ -11,7 +11,8 @@ export var URL_CONFIG = {
     VERIFY_OTP : "/verify-otp",
     SEARCH_URL:"/search",
     GET_TRAVEL_MODES:"/modes",
-    GET_ALL_PROVINCES:"/get-all-provinces"
+    GET_ALL_PROVINCES:"/get-all-provinces",
+    GET_BOOKING_BY_ID: '/get-booking-by-id'
 };
 
 export function getConfigs() {

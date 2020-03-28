@@ -1,1 +1,23 @@
-<p>booking-payment works!</p>
+<div class="payment-container">
+    <table>
+        <tbody>
+            <tr>
+                <td>Card Number</td>
+                <td> <input type="text"></td>
+            </tr>
+            <tr>
+                <td>Card Holder</td>
+                <td> <input type="text"></td>
+            </tr>
+            <tr>
+                <td>Expiry</td>
+                <td> <input type="text"></td>
+            </tr>
+            <tr>
+                <td>CVV Number</td>
+                <td> <input type="password"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="onClickMakePayment()">Make Payment</button>
+</div>

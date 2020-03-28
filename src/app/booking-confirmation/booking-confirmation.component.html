@@ -1,1 +1,58 @@
-<p>booking-confirmation works!</p>
+<div class="confirmation-container">
+    <div class="boooking-txt">
+        <h2> Your booking is confirmed! </h2>
+        <h4>Booking Reference Number: {{bookingInfo.b_id}}</h4>
+    </div>
+    <div class="dne-img">
+        <img src="../../assets/booking-done.png" alt="">
+    </div>
+    <div class="ticket-block">
+        <div class="img-block">
+            <img src="../../assets/flight.png" />
+            <div class="m-name">
+                <label class="txt"> {{bookingInfo.mode_company}}</label>
+            </div>
+            <div class="m-num">
+                <label class="txt"> ({{bookingInfo.mode_number}})</label>
+            </div>
+        </div>
+        <div class="data-block">
+            <span>
+                Passenger Name: <label class="txt">{{bookingInfo.username}}</label>
+            </span>
+            <span>
+                Source: <label class="txt">
+                    {{bookingInfo.src}}
+                </label>
+            </span>
+            <span>
+                Destination: <label class="txt">
+                    {{bookingInfo.dest}}
+                </label>
+            </span>
+            <span>
+                Journey Date: <label class="txt">
+                    {{bookingInfo.date_of_travel}}
+                </label>
+            </span>
+            <span>
+                Mode: <label class="txt">
+                    {{bookingInfo.mode}}
+                </label>
+            </span>
+            <span>
+                Fare: <label class="txt">
+                    ${{bookingInfo.mode_fare}}
+                </label>
+            </span>
+        </div>
+    </div>
+    <div class="btn-block">
+        <div>
+            <button (click)="onClickHome()" class="btn-hme">HOME</button>
+        </div>
+        <div>
+            <button class="onClickSendPdf()" class="btn-pdf">SEND PDF</button>
+        </div>
+    </div>
+</div>

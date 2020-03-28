@@ -27,5 +27,9 @@ export class UserService {
         return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.GET_ALL_PROVINCES, data);
     }
 
+    getBookingById(data) {
+        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.GET_BOOKING_BY_ID, data);
+    }
+
     
 }

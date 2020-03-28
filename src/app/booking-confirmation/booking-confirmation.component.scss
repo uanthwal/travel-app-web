@@ -1,0 +1,59 @@
+.confirmation-container {
+  width: 60%;
+  margin: 5% auto;
+  .boooking-txt {
+    text-align: center;
+  }
+  .dne-img {
+    text-align: center;
+  }
+  .ticket-block {
+    padding: 5%;
+    display: flex;
+    border: 1px solid gray;
+    .data-block {
+      width: 100%;
+      padding-left: 5%;
+      span {
+        display: block;
+        font-size: 15px;
+        margin-top: 0.5%;
+      }
+    }
+    .img-block {
+      img {
+        height: 145px;
+      }
+      .m-num {
+        text-align: center;
+      }
+      .m-name {
+        text-align: center;
+      }
+    }
+  }
+  .txt {
+    font-weight: 700;
+  }
+  .btn-block {
+    display: flex;
+    justify-content: center;
+    div {
+      margin: 5%;
+    }
+    button {
+      outline: none;
+      border: none;
+      background: #4caf50;
+      border-radius: 2px;
+      text-align: center;
+      font-size: 12px;
+      padding: 4px 20px;
+      color: white;
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
