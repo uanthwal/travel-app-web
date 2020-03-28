@@ -1,0 +1,54 @@
+<div class="plan-booking-container">
+    <img src="../../assets/home_page.jpg" alt="">
+    <div class="layover"></div>
+    <div class="path-block">
+        <div class="f-block">
+            <div class="h-text">Source</div>
+            <div>
+                <select (change)="setTravelSource($event.target.value)">
+                    <option *ngFor="let s of sourceList" [value]="s.p_id">
+                        {{s.p_name}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="s-block">
+            <div class="h-text">Destination</div>
+            <div>WTL National Park</div>
+        </div>
+    </div>
+    <div class="calendar-view">
+        <bs-datepicker-inline [bsValue]="bsInlineValue" [minDate]="minDate" (bsValueChange)="onDateChange($event) ">
+        </bs-datepicker-inline>
+    </div>
+    <div class="srch-btn">
+        <button (click)="onClickSearch()">Search</button>
+    </div>
+</div>
+
+<div class="serach-res-con">
+    <div class="grid-row ">
+        <div class="grid-item" *ngFor="let card of searchResults">
+            <div class="img-blck">
+                <img src="{{card.mode == 'bus' ? '../assets/bus.png' : '../assets/flight.png'}}" />
+            </div>
+            <div class="mode-details">
+                <span class="mode-content">
+                    {{card.mode_company}}
+                </span>
+                <span class="mode">
+                    MODE: {{card.mode}}
+                </span>
+                <span class="mode-number">
+                    {{card.mode_number}}
+                </span>
+                <span class="place-book">
+                    <button (click)="onClickBook(card)">BOOK</button>
+                </span>
+            </div>
+            <div class="price-block">
+                ${{card.mode_fare}}
+            </div>
+        </div>
+    </div>
+</div>

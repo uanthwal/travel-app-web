@@ -1,3 +1,5 @@
+.top-bar {
+}
 .search-block {
   text-align: center;
   margin-top: 10%;
@@ -60,8 +62,12 @@
   .cntnt-blck {
     padding: 10px;
     .place-name {
-      display: block;
       font-weight: 700;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .place-desc {
       font-size: 11px;

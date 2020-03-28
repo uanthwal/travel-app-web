@@ -15,14 +15,20 @@ import { RegisterComponent } from './register/register.component';
 import { VerifyTopComponent } from './verify-top/verify-top.component';
 
 import { FormsModule } from '@angular/forms';
-
+import { BookingPlanComponent } from './booking-plan/booking-plan.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingConfirmationComponent } from './booking-confirmation/booking-confirmation.component';
+import { BookingPaymentComponent } from './booking-payment/booking-payment.component';
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        BsDatepickerModule.forRoot(),
+        BrowserAnimationsModule
     ],
     declarations: [
         AppComponent,
@@ -30,7 +36,10 @@ import { FormsModule } from '@angular/forms';
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        VerifyTopComponent
+        VerifyTopComponent,
+        BookingPlanComponent,
+        BookingConfirmationComponent,
+        BookingPaymentComponent
     ],
     providers: [
         AuthGuard,

@@ -3,7 +3,7 @@
         <h2>Welcome</h2>
     </div>
     <div class="search-block">
-        <input [(ngModel)]="search_text" required>
+        <input [(ngModel)]="search_text" placeholder="Search here...." required>
     </div>
     <div class="search-btn-block">
         <button (click)="onClickSearch()">Search</button>
@@ -12,7 +12,6 @@
 
     </div>
     <div class="grid-row ">
-
         <div class="grid-item" *ngFor="let card of searchResults">
             <div class="img-blck">
                 <img src="{{card.img_url}}" />
@@ -28,7 +27,7 @@
                     {{card.province_id}}
                    </span> 
                    <span class="place-book">
-                    <button>BOOK</button>
+                    <button (click)="onClickBook(card)" >BOOK</button>
                    </span> 
             </div>
         </div>

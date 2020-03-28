@@ -1,0 +1,136 @@
+.plan-booking-container {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .layover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: black;
+    height: 100%;
+    opacity: 0.7;
+  }
+  .path-block {
+    color: white;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    .f-block {
+      flex: 1;
+      text-align: right;
+      padding-right: 15px;
+    }
+    .s-block {
+      flex: 1;
+      text-align: left;
+      padding-left: 15px;
+    }
+    .h-text {
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+  .calendar-view {
+    position: absolute;
+    top: 190px;
+    text-align: center;
+    width: 100%;
+  }
+  .srch-btn {
+    position: absolute;
+    top: 550px;
+    text-align: center;
+    width: 100%;
+    button {
+      padding: 5px 30px;
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+      border: none;
+      &:hover {
+        cursor: pointer;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+      }
+    }
+  }
+}
+
+.grid-item {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  position: relative;
+  margin: 2% auto;
+  width: 50%;
+  align-items: center;
+  box-sizing: border-box;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  .img-blck {
+    flex-basis: 10%;
+    text-align: center;
+    img {
+      border-radius: 5px 5px 0 0;
+      vertical-align: middle;
+      border-style: none;
+      height: 50px;
+      width: 50px;
+    }
+  }
+  .mode-details {
+    padding: 10px;
+    flex-basis: 70%;
+    .mode-content {
+      font-weight: 700;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mode {
+      font-size: 11px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .mode-number {
+      display: block;
+      font-weight: 500;
+      font-size: 11px;
+    }
+    .place-book {
+      justify-content: center;
+      display: flex;
+      button {
+        outline: none;
+        border: none;
+        background: #4caf50;
+        border-radius: 2px;
+        text-align: center;
+        font-size: 12px;
+        padding: 4px 20px;
+        color: white;
+        &:hover {
+          cursor: pointer;
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .price-block {
+    flex-basis: 20%;
+    text-align: center;
+    font-weight: 700;
+  }
+}
