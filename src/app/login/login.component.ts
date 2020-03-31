@@ -69,7 +69,6 @@ export class LoginComponent implements OnInit {
 
   onClickRegister() {
     if (null != this.destination) {
-      
       this.router.navigate(["/register"], {
         queryParams: { dest: this.destination }
       });

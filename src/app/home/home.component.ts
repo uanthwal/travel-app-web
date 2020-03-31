@@ -12,6 +12,7 @@ import { AppService } from "../_services/app.service";
 export class HomeComponent implements OnInit {
   search_text: string = "";
   searchResults = [];
+  trendingSearchRes = [];
   username;
   userLoggedIn = false;
   constructor(
@@ -24,18 +25,18 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.userLoggedIn = this.appService.isUserLoggedIn();
     this.appService.removeLoginInProcess();
-    // this.userService
-    //   .search({
-    //     search_text: this.search_text
-    //   })
-    //   .pipe(first())
-    //   .subscribe(
-    //     responseData => {
-    //       this.searchResults = responseData["data"];
-    //     },
-    //     error => {
-    //       console.log(error);
-    //     });
+    this.userService
+      .search({
+        search_text: "pacific rim"
+      })
+      .pipe(first())
+      .subscribe(
+        responseData => {
+          this.trendingSearchRes = responseData["data"];
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   onClickSearch() {
@@ -49,6 +50,7 @@ export class HomeComponent implements OnInit {
       .pipe(first())
       .subscribe(
         responseData => {
+          this.trendingSearchRes = [];
           this.searchResults = responseData["data"];
         },
         error => {

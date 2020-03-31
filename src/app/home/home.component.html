@@ -8,8 +8,29 @@
     <div class="search-btn-block">
         <button (click)="onClickSearch()">Search</button>
     </div>
-    <div class="search-results">
-
+    <div *ngIf="trendingSearchRes?.length > 0" class="search-results">
+        <span class="trends">Trending Searches</span>
+        <div class="grid-row ">
+            <div class="grid-item" *ngFor="let card of trendingSearchRes">
+                <div class="img-blck">
+                    <img src="https://tourismapp14.s3.amazonaws.com/{{card.place_name}}.jpg" />
+                </div>
+                <div class="cntnt-blck">
+                    <span class="place-name">
+                        {{card.place_name}}
+                       </span> 
+                       <span class="place-desc">
+                        {{card.desc}}
+                       </span>
+                       <span class="place-province">
+                        {{card.province_id}}
+                       </span> 
+                       <span class="place-book">
+                        <button (click)="onClickBook(card)" >BOOK</button>
+                       </span> 
+                </div>
+            </div>
+        </div>
     </div>
     <div class="grid-row ">
         <div class="grid-item" *ngFor="let card of searchResults">

@@ -18,7 +18,7 @@ export var URL_CONFIG = {
 };
 
 export function getConfigs() {
-    if (protocol == "http://localhost:4100") {
+    if (protocol == "http://localhost:4200") {
         return {
             BASE_URL: "https://cloud-5409.herokuapp.com",
             ADMIN_ICON: "../assets/admin.png"
