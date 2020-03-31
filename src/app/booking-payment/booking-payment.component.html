@@ -1,23 +1,60 @@
 <div class="payment-container">
-    <table>
-        <tbody>
-            <tr>
-                <td>Card Number</td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td>Card Holder</td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td>Expiry</td>
-                <td> <input type="text"></td>
-            </tr>
-            <tr>
-                <td>CVV Number</td>
-                <td> <input type="password"></td>
-            </tr>
-        </tbody>
-    </table>
+    <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Card Number</td>
+                    <td>
+                        <input type="text" formControlName="cardnumber" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cardnumber.errors }" />
+                        <div *ngIf="submitted && f.cardnumber.errors" class="invalid-feedback">
+                            <div *ngIf="f.cardnumber.errors.required">Name is required</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Card Holder</td>
+                    <td>
+                        <input type="text" formControlName="username" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                            <div *ngIf="f.username.errors.required">Name is required</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Expiry</td>
+                    <td>
+                        <input type="text" formControlName="expiry" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.expiry.errors }" placeholder="MMDD" />
+                        <div *ngIf="submitted && f.expiry.errors" class="invalid-feedback">
+                            <div *ngIf="f.expiry.errors.required">Name is required</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CVV Number</td>
+                    <td>
+                        <input type="password" formControlName="cvv" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.cvv.errors }" />
+                        <div *ngIf="submitted && f.cvv.errors" class="invalid-feedback">
+                            <div *ngIf="f.cvv.errors.required">Name is required</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
     <button (click)="onClickMakePayment()">Make Payment</button>
+
+    
+</div>
+
+<div class="err-blck" *ngIf="invalidFields?.length > 0">
+    Check the following field(s):
+    <ul class="error-ul">
+        <li *ngFor="let err of invalidFields">
+            {{err}}
+        </li>
+    </ul>
 </div>

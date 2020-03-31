@@ -26,9 +26,7 @@ export class HomeComponent implements OnInit {
     this.userLoggedIn = this.appService.isUserLoggedIn();
     this.appService.removeLoginInProcess();
     this.userService
-      .search({
-        search_text: "pacific rim"
-      })
+      .get_hotspots({})
       .pipe(first())
       .subscribe(
         responseData => {

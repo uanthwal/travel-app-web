@@ -15,6 +15,7 @@ export var URL_CONFIG = {
     GET_BOOKING_BY_ID: '/api/get-booking-by-id',
     GET_USER_INFO_BY_SESSION: '/api/get-user-info-by-session',
     BOOK_TICKET: '/api/book-ticket',
+    GET_HOTSPOTS:'/get-hotspots'
 };
 
 export function getConfigs() {

@@ -14,6 +14,10 @@ export class UserService {
     search(data) {
         return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.SEARCH_URL, data);
     }
+    
+    get_hotspots(data) {
+        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.GET_HOTSPOTS, data);
+    }
 
     getUserInfoBySession(data) {
         return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.SEARCH_URL, data);
