@@ -1,14 +1,14 @@
 <div class="confirmation-container">
     <div class="boooking-txt">
         <h2> Your booking is confirmed! </h2>
-        <h4>Booking Reference Number: {{bookingInfo.b_id}}</h4>
+        <h4>Booking Reference Number: {{bookingInfo._id}}</h4>
     </div>
     <div class="dne-img">
         <img src="../../assets/booking-done.png" alt="">
     </div>
     <div class="ticket-block">
         <div class="img-block">
-            <img src="../../assets/flight.png" />
+            <img src="{{bookingInfo.mode == 'bus' ? '../../assets/bus.png' : '../../assets/flight.png'}}" />
             <div class="m-name">
                 <label class="txt"> {{bookingInfo.mode_company}}</label>
             </div>

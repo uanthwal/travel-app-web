@@ -15,6 +15,10 @@ export class UserService {
         return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.SEARCH_URL, data);
     }
 
+    getUserInfoBySession(data) {
+        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.SEARCH_URL, data);
+    }
+
     searchTravelOptions(data) {
         return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.GET_TRAVEL_MODES, data);
     }
@@ -24,7 +28,7 @@ export class UserService {
     }
 
     bookTicket(data) {
-        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.GET_ALL_PROVINCES, data);
+        return this.http.post(URL_CONFIG.BASE_URL  + URL_CONFIG.BOOK_TICKET, data);
     }
 
     getBookingById(data) {

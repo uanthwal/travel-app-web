@@ -11,10 +11,23 @@ import { Router } from "@angular/router";
 export class HomeComponent implements OnInit {
   search_text: string = "";
   searchResults = [];
+  username;
   constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit() {
-    
+    this.userService
+      .search({
+        search_text: this.search_text,
+        session_id: JSON.parse(localStorage.getItem("session_id"))
+      })
+      .pipe(first())
+      .subscribe(
+        responseData => {
+          this.searchResults = responseData["data"];
+        },
+        error => {
+          console.log(error);
+        });
   }
 
   onClickSearch() {

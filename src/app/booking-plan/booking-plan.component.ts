@@ -78,11 +78,8 @@ export class BookingPlanComponent implements OnInit {
   }
 
   onClickBook(option) {
-    this.router.navigate(["/booking-payment"], {
-      queryParams: { b_id: "FGHJ5678GHJBGH" }
-    });
-    return;
     let payload = {
+      username:"add username here",
       src: this.source,
       dest: this.destination,
       mode: option.mode,
@@ -90,7 +87,7 @@ export class BookingPlanComponent implements OnInit {
       mode_fare: option.mode_fare,
       mode_number: option.mode_number,
       mode_id: option.mode_id,
-      data_of_travel: this.dateSelected
+      date_of_travel: this.dateSelected
     };
     this.userService
       .bookTicket(payload)

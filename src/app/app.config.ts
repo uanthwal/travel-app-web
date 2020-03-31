@@ -9,10 +9,12 @@ export var URL_CONFIG = {
     LOGIN_URL: "/login",
     REGISTER_URL: "/register",
     VERIFY_OTP : "/verify-otp",
-    SEARCH_URL:"/search",
-    GET_TRAVEL_MODES:"/modes",
-    GET_ALL_PROVINCES:"/get-all-provinces",
-    GET_BOOKING_BY_ID: '/get-booking-by-id'
+    SEARCH_URL:"/api/search",
+    GET_TRAVEL_MODES:"/api/modes",
+    GET_ALL_PROVINCES:"/api/get-all-provinces",
+    GET_BOOKING_BY_ID: '/api/get-booking-by-id',
+    GET_USER_INFO_BY_SESSION: '/api/get-user-info-by-session',
+    BOOK_TICKET: '/api/book-ticket',
 };
 
 export function getConfigs() {

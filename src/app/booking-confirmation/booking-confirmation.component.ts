@@ -26,26 +26,13 @@ export class BookingConfirmationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bookingInfo = {
-      b_id: "FGHJ5678GHJBGH",
-      username: "James Bond",
-      src: "YHZ",
-      dest: "GHZ",
-      mode: "flight",
-      mode_company: "Air India",
-      mode_fare: "789.00",
-      mode_number: "AI-678",
-      mode_id: "flight_1",
-      data_of_travel: "March 29, 2020"
-    };
-    return;
     this.userService
-      .bookTicket({ b_id: this.bookingId })
+      .getBookingById({ booking_id: this.bookingId })
       .pipe(first())
       .subscribe(
         data => {
           if (data["code"] == 200) {
-            this.bookingInfo = data["data"];
+            this.bookingInfo = data["data"][0];
           }
         },
         error => {}

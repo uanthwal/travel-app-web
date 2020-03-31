@@ -1,6 +1,6 @@
 <div class="home-container">
     <div class="top-bar">
-        <h2>Welcome</h2>
+        <h2>Welcome, {{username}}</h2>
     </div>
     <div class="search-block">
         <input [(ngModel)]="search_text" placeholder="Search here...." required>
@@ -14,7 +14,7 @@
     <div class="grid-row ">
         <div class="grid-item" *ngFor="let card of searchResults">
             <div class="img-blck">
-                <img src="{{card.img_url}}" />
+                <img src="https://tourismapp14.s3.amazonaws.com/{{card.place_name}}.jpg" />
             </div>
             <div class="cntnt-blck">
                 <span class="place-name">
@@ -22,7 +22,7 @@
                    </span> 
                    <span class="place-desc">
                     {{card.desc}}
-                   </span> 
+                   </span>
                    <span class="place-province">
                     {{card.province_id}}
                    </span> 
