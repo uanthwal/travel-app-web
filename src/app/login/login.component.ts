@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { first } from "rxjs/operators";
 
 import { AlertService, AuthenticationService } from "../_services";
+import { AppService } from "../_services/app.service";
 
 @Component({
   selector: "app-login",
@@ -13,28 +14,27 @@ import { AlertService, AuthenticationService } from "../_services";
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
-  submitted = false;
-  returnUrl: string;
-
+  destination;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private alertService: AlertService
-  ) {}
+    private alertService: AlertService,
+    private appService: AppService
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.destination = params["dest"];
+    });
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ["", Validators.required],
       password: ["", Validators.required]
     });
-
-    // reset login status
     this.authenticationService.logout();
-
-    // get return url from route parameters or default to '/'
-    // this.returnUrl = this.route.snapshot.queryParams["returnUrl"] || "/";
+    this.appService.setLoginInProcess();
   }
 
   // convenience getter for easy access to form fields
@@ -43,30 +43,36 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
-
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.loading = true;
     this.authenticationService
       .login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(
         data => {
-          debugger;
           if (data.code == 200) {
-            this.router.navigate(["/verify-otp"]);
+            if (null != this.destination) {
+              this.router.navigate(["/verify-otp"], {
+                queryParams: { dest: this.destination }
+              });
+            } else this.router.navigate(["/verify-otp"]);
           } else {
+            alert(data["message"]);
           }
-          // this.router.navigate([this.returnUrl]);
         },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        }
+        error => {}
       );
+  }
+
+  onClickRegister() {
+    if (null != this.destination) {
+      
+      this.router.navigate(["/register"], {
+        queryParams: { dest: this.destination }
+      });
+    } else this.router.navigate(["/register"]);
   }
 }

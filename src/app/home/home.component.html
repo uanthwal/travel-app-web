@@ -1,6 +1,6 @@
 <div class="home-container">
-    <div class="top-bar">
-        <h2>Welcome, {{username}}</h2>
+    <div *ngIf="userLoggedIn" class="top-bar">
+        <h2>Welcome, {{username}} <i class="fa fa-power-off off-icon" (click)="onClickLogout()"></i></h2> 
     </div>
     <div class="search-block">
         <input [(ngModel)]="search_text" placeholder="Search here...." required>

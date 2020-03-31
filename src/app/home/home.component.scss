@@ -1,4 +1,13 @@
 .top-bar {
+  text-align: right;
+    padding: 1% 2%;
+    .off-icon {
+      color: gray;
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+    }
 }
 .search-block {
   text-align: center;

@@ -10,7 +10,7 @@ import { AuthGuard } from './_guards';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routing.module';
 import { RegisterComponent } from './register/register.component';
 import { VerifyTopComponent } from './verify-top/verify-top.component';
 
@@ -20,6 +20,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookingConfirmationComponent } from './booking-confirmation/booking-confirmation.component';
 import { BookingPaymentComponent } from './booking-payment/booking-payment.component';
+import { LoginGuard } from './_guards/reg.guard';
+import { AppService } from './_services/app.service';
 @NgModule({
     imports: [
         BrowserModule,
@@ -43,9 +45,11 @@ import { BookingPaymentComponent } from './booking-payment/booking-payment.compo
     ],
     providers: [
         AuthGuard,
+        LoginGuard,
         AlertService,
         AuthenticationService,
-        UserService
+        UserService,
+        AppService
     ],
     bootstrap: [AppComponent]
 })
