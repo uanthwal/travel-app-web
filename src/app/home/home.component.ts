@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.userLoggedIn = this.appService.isUserLoggedIn();
+    this.username = JSON.parse(localStorage.getItem("username"));
     this.appService.removeLoginInProcess();
     this.userService
       .get_hotspots({})
@@ -34,7 +35,8 @@ export class HomeComponent implements OnInit {
         },
         error => {
           console.log(error);
-        });
+        }
+      );
   }
 
   onClickSearch() {
@@ -74,5 +76,9 @@ export class HomeComponent implements OnInit {
     this.authenticationService.logout();
     this.userLoggedIn = this.appService.isUserLoggedIn();
     this.router.navigate(["/home"]);
+  }
+
+  onClickLogin() {
+    this.router.navigate(["/login"]);
   }
 }

@@ -54,6 +54,7 @@ export class VerifyTopComponent implements OnInit {
           if (data.code == 200) {
             localStorage.setItem("isUserLoggedIn", JSON.stringify(true));
             localStorage.setItem("session_id", JSON.stringify(data.session_id));
+            localStorage.setItem("username", JSON.stringify(data['data']['username']));
             if (null != this.destination) {
               this.router.navigate(["/plan-booking"], {
                 queryParams: { dest: this.destination }

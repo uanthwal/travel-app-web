@@ -46,7 +46,7 @@ export class BookingPlanComponent implements OnInit {
         data => {
           if (data["code"] == 200) {
             this.sourceList = data["data"];
-            this.source = data['data'][0]['p_id']
+            this.source = data["data"][0]["p_id"];
           }
         },
         error => {}
@@ -73,13 +73,12 @@ export class BookingPlanComponent implements OnInit {
   }
 
   onDateChange(event) {
-    console.log(event);
     this.dateSelected = event;
   }
 
   onClickBook(option) {
     let payload = {
-      username:"add username here",
+      username: JSON.parse(localStorage.getItem("username")),
       src: this.source,
       dest: this.destination,
       mode: option.mode,
@@ -87,8 +86,10 @@ export class BookingPlanComponent implements OnInit {
       mode_fare: option.mode_fare,
       mode_number: option.mode_number,
       mode_id: option.mode_id,
-      date_of_travel: this.dateSelected
+      date_of_travel: this.dateSelected,
+      email_id: JSON.parse(localStorage.getItem("currentUser"))
     };
+    debugger;
     this.userService
       .bookTicket(payload)
       .pipe(first())

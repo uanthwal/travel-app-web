@@ -9,7 +9,9 @@ import { first } from "rxjs/operators";
   styleUrls: ["./booking-confirmation.component.scss"]
 })
 export class BookingConfirmationComponent implements OnInit {
-  bookingInfo;
+  bookingInfo = {
+    "_id":""
+  };
   bookingId;
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +46,18 @@ export class BookingConfirmationComponent implements OnInit {
   }
 
   onClickSendPdf() {
+    debugger;
     // make an api call here to send the pdf file to user's mailbox
+    this.userService
+      .generateTicket({ booking_id: this.bookingId })
+      .pipe(first())
+      .subscribe(
+        data => {
+          if (data["code"] == 200) {
+            alert(data['message']);
+          }
+        },
+        error => {}
+      );
   }
 }

@@ -2,6 +2,9 @@
     <div *ngIf="userLoggedIn" class="top-bar">
         <h2>Welcome, {{username}} <i class="fa fa-power-off off-icon" (click)="onClickLogout()"></i></h2> 
     </div>
+    <div *ngIf="!userLoggedIn" class="top-bar">
+        <span class="login-txt" (click)="onClickLogin()">Login</span>
+    </div>
     <div class="search-block">
         <input [(ngModel)]="search_text" placeholder="Search here...." required>
     </div>
@@ -9,7 +12,7 @@
         <button (click)="onClickSearch()">Search</button>
     </div>
     <div *ngIf="trendingSearchRes?.length > 0" class="search-results">
-        <span class="trends">Trending Searches</span>
+        <span class="trends">Trending Places</span>
         <div class="grid-row ">
             <div class="grid-item" *ngFor="let card of trendingSearchRes">
                 <div class="img-blck">
