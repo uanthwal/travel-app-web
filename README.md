@@ -25,7 +25,7 @@ Ticket generation<br/>
 <h3><b>Output:</b></h3>
 <div>
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_1.png" />
-  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_2.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_2.png" width="850"/>
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_3.png" />
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_4.png" />
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_5.png" />
@@ -34,6 +34,7 @@ Ticket generation<br/>
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_8.png" />
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_9.png" />
   <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_10.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_11.png" />
 <div>
 
 <h3><b>References:</b></h3>
