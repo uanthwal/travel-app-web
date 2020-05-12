@@ -1,4 +1,4 @@
-<h3><b>Abstract:</b></h3>This project aims to build a mobile app of tourism in Canada. The mobile app is for the android OS users and the language used in building the app is Java. We have selected four key components which will act as pillars of our app namely: - Security, Accuracy, Efficiency and Responsiveness. For security, it is required that we provide 2-factor authentications.
+<h3><b>Abstract:</b></h3>This project aims to build a web app of tourism in Canada. The web app is built on Angular 9 framework and the language used in building the app is Java. We have selected four key components which will act as pillars of our app namely: - Security, Accuracy, Efficiency and Responsiveness. For security, it is required that we provide 2-factor authentications.
 This can be done either providing an OTP for a registered user or an email to the user which can verify the legitimacy of the user. It is also required that we encrypt the data before storing it in a
 database which will add another security layer in our app. This app requires four modules namely: Registration, Login, Searching tourist spots and payment options. The app should
 have an interface to see all the tourist places available in Canada and once a destination is
@@ -14,27 +14,26 @@ Login<br/>
 Searching tourist spots<br/>
 Make booking<br/>
 Payment options<br/>
+Ticket generation<br/>
 
 <h3><b>Installation Process:</b></h3>1. Git clone https://github.com/uanthwal/Canada-Tourism-Mobile-App<br/>
-2. Import the project in Android Studio<br/>
-3. Wait for the gradle to finishing building activites<br/>
+2. Import the in any IDE<br/>
+3. Execute npm install<br/>
 4. Run the app<br/>
 
-<h3><b>Dependencies:</b></h3>
-Apart from the dependencies for the layouts and the required dependencies, the following dependencies were used. <br/>
-<b>1. com.squareup.picasso:picasso:2.71828:</b> This library is used to load images from a URL into an ImageView object <br/>
-<b>2. androidx.cardview:cardview:1.0.0:</b> This library is used to load layout items into cards. <br/>
-<b>3. androidx.recyclerview:recyclerview:1.0.0:</b> This library is used to display lists of items. <br/>
-<b>4. de.hdodenhof:circleimageview:3.0.1:</b> This library is used to display circular images. <br/>
-<b>5. org.bouncycastle:bcprov-ext-jdk14:1.64:</b> This library is used to encrypt and decrypt messages using various cryptographic algorithms. <br/>
-<b>6. org.jboss.aerogear:aerogear-otp-java:1.0.0.M8:</b> This library is used to generate 2-factor authentication codes using an authentication key. <br/>
-<b>7. com.google.android.gms:play-services-vision:19.0.0:</b> This library is used to scan QR codes using the device’s camera.  <br/>
-<b>8. org.apache.lucene:lucene-spatial:8.2.0:</b> This library is used to calculate the distance between two points using the latitude and longitude points. <br/>
 
 <h3><b>Output:</b></h3>
 <div>
-  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_1.png" width="750"/>
-  
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_1.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_2.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_3.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_4.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_5.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_6.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_7.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_8.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_9.png" />
+  <img src="https://github.com/uanthwal/travel-app-web/blob/master/demo/image_10.png" />
 <div>
 
 <h3><b>References:</b></h3>
