@@ -9,12 +9,12 @@ into any environment. We used Express JS as our backend and a NoSQL database i.e
 faster data operations which in turn increases performance and efficiency of our tourism app.
 
 <h3><b>Functionalities:</b></h3>The major of the application are:<br/>
-Registration<br/>
-Login<br/>
-Searching tourist spots<br/>
-Make booking<br/>
-Payment options<br/>
-Ticket generation<br/>
+1. Registration<br/>
+2. Login<br/>
+3. Searching tourist spots<br/>
+4. Make booking<br/>
+5. Payment options<br/>
+6. Ticket generation<br/>
 
 <h3><b>Installation Process:</b></h3>1. Git clone https://github.com/uanthwal/Canada-Tourism-Mobile-App<br/>
 2. Import the in any IDE<br/>
